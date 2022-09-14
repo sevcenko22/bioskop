@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Ticket;
 use App\Http\Requests\StoreTicketRequest;
 use App\Http\Requests\UpdateTicketRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TicketController extends Controller
 {
@@ -16,6 +18,7 @@ class TicketController extends Controller
     public function index()
     {
         //
+        return response()->json(Ticket::all());
     }
 
     /**
@@ -37,6 +40,8 @@ class TicketController extends Controller
     public function store(StoreTicketRequest $request)
     {
         //
+        $ticket = Ticket::create($request->validated());
+        return response()->json($ticket);
     }
 
     /**
@@ -83,4 +88,7 @@ class TicketController extends Controller
     {
         //
     }
+    
+
+    
 }

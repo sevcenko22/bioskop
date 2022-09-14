@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('spectator_id')->refrences('id')->on('spectators');
+            $table->foreignId('projection_id')->refrences('id')->on('projections');
+            $table->string('ticket_type');
             $table->timestamps();
         });
     }

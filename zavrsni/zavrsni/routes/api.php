@@ -6,7 +6,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProjectionController;
 use App\Http\Controllers\SpectatorController;
-
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +32,9 @@ Route::apiResources([
 //Projekcije
 Route::post('/projection', [ProjectionController::class, 'createProjection']);
 Route::get('/projection', [ProjectionController::class, 'getProjections']);
+
+//Tickets
+Route::get('/ticket', [TicketsController::class, 'createProjection']);
+Route::post('/ticket', [TicketsController::class, 'store']);
+Route::post('/mostWatched', [TicketController::class, 'mostWatched']);
+

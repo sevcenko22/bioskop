@@ -14,5 +14,7 @@ class Spectator extends Model
         'last_name'
     ];
 
-    
+    public function tickets() {
+        return $this->hasMany(Ticket::class);
+    }
 }
