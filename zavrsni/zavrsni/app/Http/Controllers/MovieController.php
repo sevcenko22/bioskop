@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
-use App\Http\Requests\StoreRoomRequest;
-use App\Http\Requests\UpdateRoomRequest;
+use App\Models\Movie;
+use App\Http\Requests\StoreMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
 
-class RoomController extends Controller
+class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        // 
-        return response()->json(Room::all());
+        //
+        return response()->json(Movie::all());
     }
 
     /**
@@ -32,34 +32,33 @@ class RoomController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRoomRequest  $request
+     * @param  \App\Http\Requests\StoreMovieRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRoomRequest $request)
+    public function store(StoreMovieRequest $request)
     {
         //
-        $room = Room::create($request->validated());
-        return response()->json($room);
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Room $room)
+    public function show(Movie $movie)
     {
-        //return response()->json($room);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Room $room)
+    public function edit(Movie $movie)
     {
         //
     }
@@ -67,11 +66,11 @@ class RoomController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRoomRequest  $request
-     * @param  \App\Models\Room  $room
+     * @param  \App\Http\Requests\UpdateMovieRequest  $request
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRoomRequest $request, Room $room)
+    public function update(UpdateMovieRequest $request, Movie $movie)
     {
         //
     }
@@ -79,10 +78,10 @@ class RoomController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Room  $room
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Room $room)
+    public function destroy(Movie $movie)
     {
         //
     }
