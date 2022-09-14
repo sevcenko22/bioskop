@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProjectionController;
+use App\Http\Controllers\SpectatorController;
 
 
 /*
@@ -24,7 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     '/room' => RoomController::class,
-    '/movie' => MovieController::class
+    '/movie' => MovieController::class,
+    '/spectator' => SpectatorController::class
 ]);
 
 //Projekcije
