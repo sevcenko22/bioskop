@@ -37,8 +37,8 @@ class MovieController extends Controller
      */
     public function store(StoreMovieRequest $request)
     {
-        //
-        
+        $movie = Movie::create($request->validated());
+        return response()->json($movie);
     }
 
     /**
@@ -50,6 +50,7 @@ class MovieController extends Controller
     public function show(Movie $movie)
     {
         //
+        return response()->json($movie);
     }
 
     /**
@@ -73,6 +74,11 @@ class MovieController extends Controller
     public function update(UpdateMovieRequest $request, Movie $movie)
     {
         //
+        $movie->update([
+            'title' => $request->title,
+            'duration_min' => $request->duration_min
+        ]);
+        return response()->json($movie);
     }
 
     /**
@@ -84,5 +90,7 @@ class MovieController extends Controller
     public function destroy(Movie $movie)
     {
         //
+        $movie->delete();
+        return response()->json($movie);
     }
 }
